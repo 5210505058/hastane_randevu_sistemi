@@ -1,8 +1,16 @@
 # Hastane Randevu Sistemi
 
-Bu proje, Java Swing kullanılarak geliştirilmiş ve MySQL veritabanı ile çalışan masaüstü tabanlı bir Hastane Randevu Yönetim Sistemidir. Sistem; Hasta ve Doktor kullanıcı rollerini destekler ve randevu alma, yönetme ve muayene süreçlerini kapsar.
+Java Swing kullanılarak geliştirilmiş, MySQL veritabanı ile çalışan masaüstü tabanlı bir Hastane Randevu Yönetim Sistemidir.  
+Sistem; Hasta ve Doktor kullanıcı rollerini destekler ve randevu alma, yönetme ve muayene süreçlerini kapsar.
 
-Bu proje eğitim / akademik amaçlı olarak geliştirilmiştir.
+## Ekran Görüntüleri / Diyagramlar
+
+Aşağıdaki görseller GitHub üzerinde README içinde görüntülenir:
+
+![Class Diagram](https://github.com/user-attachments/assets/2eb7a1c6-3671-4c58-99df-608fc715f069)
+![Sequence Diagram](https://github.com/user-attachments/assets/7ce62b03-dc91-413e-97d8-06463e1167bf)
+![ER Diagram](https://github.com/user-attachments/assets/69d52919-d856-43f9-953d-b2a5ae5db22f)
+![Use Case Diagram](https://github.com/user-attachments/assets/e8aaec1b-f7e5-4c01-898d-ff210feb3bc9)
 
 ## Proje Özellikleri
 
@@ -37,14 +45,14 @@ Bu proje eğitim / akademik amaçlı olarak geliştirilmiştir.
 ## Kullanılan Tasarım Desenleri
 
 ### Zorunlu Tasarım Desenleri
-- Factory Pattern – UserFactory
-- State Pattern – AppointmentState, AktifState, IptalState, TamamlandiState, GelmediState
-- Observer Pattern – AppointmentObserver, AppointmentSubject
-- Abstract Class – User, BaseDashboard
+- Factory Pattern (UserFactory)
+- State Pattern (AppointmentState: AktifState, IptalState, TamamlandiState, GelmediState)
+- Observer Pattern (AppointmentObserver, AppointmentSubject)
+- Abstract Class (User, BaseDashboard)
 
 ### Ek Tasarım Desenleri
-- Template Method Pattern – AbstractViewTemplate
-- Strategy Pattern – WorkingHourStrategy, HourlyWorkingHourStrategy
+- Template Method Pattern (AbstractViewTemplate)
+- Strategy Pattern (WorkingHourStrategy, HourlyWorkingHourStrategy)
 
 ## Kullanılan Teknolojiler
 - Java (JDK 17+)
@@ -65,23 +73,26 @@ Bu proje eğitim / akademik amaçlı olarak geliştirilmiştir.
 - Aynı doktor, aynı gün ve aynı saat için birden fazla randevu alınamaz
 - Hasta aynı gün içinde birden fazla randevu alamaz
 - Doktor çalışma saatleri saatlik slotlara bölünür
-- Örnek çalışma saati formatı: 09:00-12:00,13:00-17:00
 
-## Kurulum
-
-### Veritabanını Oluşturma
-```sql
+Örnek çalışma saati formatı:
+```text
+09:00-12:00,13:00-17:00
+Kurulum
+1) Veritabanını Oluşturma
+sql
+Kodu kopyala
 CREATE DATABASE hospital_randevu;
 Tabloların oluşturulması için uygun SQL scriptlerinin çalıştırılması gerekir.
 
-Veritabanı Bağlantı Ayarları
-DatabaseManager sınıfı içinde kendi MySQL bilgilerinizi giriniz.
+2) Veritabanı Bağlantı Ayarları
+DatabaseManager sınıfı içinde kendi MySQL bilgilerinizi giriniz:
 
-URL: jdbc:mysql://localhost:3306/hospital_randevu
-USER: root
-PASS: 1234
-
-Uygulamayı Çalıştırma
+text
+Kodu kopyala
+URL  : jdbc:mysql://localhost:3306/hospital_randevu
+USER : root
+PASS : 1234
+3) Uygulamayı Çalıştırma
 bash
 Kodu kopyala
 javac HastaneSistemi.java
@@ -105,22 +116,6 @@ Web veya mobil arayüz
 
 REST API entegrasyonu
 
-Diyagramlar
-Sınıf Diyagramı
-
-
-Sequence Diyagramı
-
-
-ER Diyagramı
-
-
-Use Case Diyagramı
-
-
-Tasarım Desenleri Diyagramı
-
-
 Geliştiriciler
 Alp Erin Şenel (1220505066)
 https://github.com/KLU1220505066/hastaneRandevu/tree/main
@@ -133,9 +128,3 @@ https://github.com/5210505058/hastane_randevu_sistemi
 
 Lisans
 Bu proje eğitim amaçlıdır ve serbestçe geliştirilebilir.
-
-markdown
-Kodu kopyala
-
-Artık bu **%100 doğru GitHub README.md formatı**.  
-İstersen bir sonraki adımda repo için **LICENSE**, **.gitignore**, **SQL script**, ya da **PDF rapor** da hazırlarım.
